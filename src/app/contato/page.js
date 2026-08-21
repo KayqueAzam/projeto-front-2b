@@ -26,7 +26,7 @@ export default function Contato() {
             <p>{msg}</p>
             <p>Contador: {cont}</p>
             <button onClick={() => somar()}>Somar</button>
-            <button>{mostrar ? 'Esconder' : 'Mostrar'}</button> {/*Exiba o texto "Esconder" se a variável mostrar for verdadeira, e exiba o texto "Mostrar" se a variável for falsa*/}
+            <button onClick={() => setMostrar(!mostrar)}>{mostrar ? 'Esconder' : 'Mostrar'}</button> {/*Exiba o texto "Esconder" se a variável mostrar for verdadeira, e exiba o texto "Mostrar" se a variável for falsa*/}
             {mostrar && <form>
                 <fieldset>
                     <p>{texto ? texto : 'Digite algum conteúdo'}</p>
@@ -35,7 +35,8 @@ export default function Contato() {
                     <button type='button' onClick={() => alert(texto)}>Clique aqui</button>
                     {/* ao clicar no botão, dispare um alerta (alert) com o conteúdo digitado no input */}
                 </fieldset>
-            </form>}
-        </main>
+            </form>
+            }
+        </main >
     )
 }
